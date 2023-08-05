@@ -6,6 +6,11 @@
 	// Use a child theme instead of placing custom functions here
 	// http://codex.wordpress.org/Child_Themes
 
+function theme_get_avatar( $avatar ) {
+    $avatar = preg_replace("/\/\/(www|\d|secure|cn).gravatar.com\/avatar\//", "//gravatar.loli.net/avatar/", $avatar);
+    return $avatar;
+}
+add_filter('get_avatar', 'theme_get_avatar');
 	
 /* ------------------------------------------------------------------------- *
  *  Load theme files
