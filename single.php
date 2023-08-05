@@ -59,33 +59,32 @@
 					<div class="clear"></div>				
 				</div><!--/.entry-->
 			</div>
-			
-			<div class="entry-footer group">
-	
-				<?php the_tags('<p class="post-tags"><span>'.esc_html__('Tags:','grayzone').'</span> ','','</p>'); ?>
-				
-				<div class="clear"></div>
-				
-				<?php if ( ( get_theme_mod( 'author-bio', 'on' ) == 'on' ) && get_the_author_meta( 'description' ) ): ?>
-					<div class="author-bio">
-						<div class="bio-avatar"><?php echo get_avatar(get_the_author_meta('user_email'),'128'); ?></div>
-						<p class="bio-name"><?php the_author_meta('display_name'); ?></p>
-						<p class="bio-desc"><?php the_author_meta('description'); ?></p>
-						<div class="clear"></div>
-					</div>
-				<?php endif; ?>
-				
-				<?php do_action( 'alx_ext_sharrre_footer' ); ?>
-				
-				<?php if ( get_theme_mod( 'post-nav', 'sidebar' ) == 'content' ) { get_template_part('inc/post-nav'); } ?>
-				
-				<?php if ( get_theme_mod( 'related-posts', 'categories' ) != 'disable' ) { get_template_part('inc/related-posts'); } ?>
-
-				<?php if ( comments_open() || get_comments_number() ) :	comments_template( '/comments.php', true ); endif; ?>
-				
-			</div>
-
 		</article><!--/.post-->
+
+        <div class="entry-footer group">
+
+            <?php the_tags('<p class="post-tags"><span>'.esc_html__('Tags:','grayzone').'</span> ','','</p>'); ?>
+
+            <div class="clear"></div>
+
+            <?php if ( ( get_theme_mod( 'author-bio', 'on' ) == 'on' ) && get_the_author_meta( 'description' ) ): ?>
+                <div class="author-bio">
+                    <div class="bio-avatar"><?php echo get_avatar(get_the_author_meta('user_email'),'128'); ?></div>
+                    <p class="bio-name"><?php the_author_meta('display_name'); ?></p>
+                    <p class="bio-desc"><?php the_author_meta('description'); ?></p>
+                    <div class="clear"></div>
+                </div>
+            <?php endif; ?>
+
+            <?php do_action( 'alx_ext_sharrre_footer' ); ?>
+
+            <?php if ( get_theme_mod( 'post-nav', 'sidebar' ) == 'content' ) { get_template_part('inc/post-nav'); } ?>
+
+            <?php if ( get_theme_mod( 'related-posts', 'categories' ) != 'disable' ) { get_template_part('inc/related-posts'); } ?>
+
+            <?php if ( comments_open() || get_comments_number() ) :	comments_template( '/comments.php', true ); endif; ?>
+
+        </div>
 
 	<?php endwhile; ?>
 	
