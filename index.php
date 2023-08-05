@@ -2,7 +2,7 @@
 
 <div class="content">
 
-	<?php get_template_part('inc/featured'); ?>
+	// <?php get_template_part('inc/featured'); ?>
 	
 	<?php if ( get_theme_mod('heading-enable','off') == 'on' ) : ?>
 		<?php get_template_part('inc/page-title'); ?>
